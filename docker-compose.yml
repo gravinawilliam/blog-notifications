@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  blog-notifications:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    entrypoint: ./entrypoint.sh
+    image: blog-notifications:latest
+    environment:
+      SONAR_PASSWORD: ${SONAR_PASSWORD}
+      SONAR_LOGIN: ${SONAR_LOGIN}
+      SONAR_PROJECT_KEY: ${SONAR_PROJECT_KEY}
+      SONAR_SERVER_URL: ${SONAR_SERVER_URL}
+      BLOG_NOTIFICATIONS_PORT: ${BLOG_NOTIFICATIONS_PORT}
+      NODE_ENV: ${NODE_ENV}
+      SENTRY_DSN: ${SENTRY_DSN}
+    ports:
+      - "${BLOG_NOTIFICATIONS_PORT}:${BLOG_NOTIFICATIONS_PORT}"
+    container_name: blog-notifications
+    networks:
+      - kong-net
+    volumes:
+      - .:/home/node/app
+
+networks:
+  kong-net:
+    external: true
