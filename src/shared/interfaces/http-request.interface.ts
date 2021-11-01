@@ -3,7 +3,7 @@ type IHeaders = {
 };
 
 export type IHttpRequest = {
-  body?: unknown;
+  body?: any;
   params?: unknown;
   headers?: IHeaders;
 };
