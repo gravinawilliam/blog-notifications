@@ -94,7 +94,7 @@ module.exports = {
     'no-proto': 'error',
     'no-restricted-properties': 'error',
     'no-return-assign': 'error',
-    'no-return-await': 'error',
+    'no-return-await': 'off',
     'no-self-compare': 'error',
     'no-sequences': 'error',
     'no-throw-literal': 'error',
