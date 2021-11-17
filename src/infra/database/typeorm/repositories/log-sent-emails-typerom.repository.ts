@@ -15,7 +15,9 @@ export default class LogSentEmailsTypeormRepository
     this.ormRepository = getMongoRepository(LogSentEmailSchema, 'secondary');
   }
 
-  public async create(params: CreateLogSentEmailRepositoryDTO.Params): Promise<void> {
+  public async create(
+    params: CreateLogSentEmailRepositoryDTO.Params,
+  ): Promise<void> {
     const created = this.ormRepository.create(params);
     await this.ormRepository.save(created);
   }

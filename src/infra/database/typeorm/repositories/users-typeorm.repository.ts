@@ -8,7 +8,9 @@ import { left, right } from '@shared/utils/either';
 
 import { UserEntity } from '../entities/user.entity';
 
-export default class UsersTypeormRepository implements IFindUserByEmailRepository {
+export default class UsersTypeormRepository
+  implements IFindUserByEmailRepository
+{
   private ormRepository: Repository<UserEntity>;
 
   constructor() {

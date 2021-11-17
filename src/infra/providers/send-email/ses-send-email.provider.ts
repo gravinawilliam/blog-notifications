@@ -24,7 +24,9 @@ export class SESSendEmailProvider implements ISendEmailProvider {
     to,
     from,
   }: SendEmailProviderDTO.Params): Promise<any> {
-    const { parseTemplate } = await this.emailTemplateProvider.parse(templateData);
+    const { parseTemplate } = await this.emailTemplateProvider.parse(
+      templateData,
+    );
     return this.client.sendMail({
       from: {
         name: from.name,

@@ -5,7 +5,10 @@ import { EmailTemplateModel } from '@models/email-template.model';
 import { BaseEntity } from './_base.entity';
 
 @Entity('email_templates')
-export class EmailTemplateEntity extends BaseEntity implements EmailTemplateModel {
+export class EmailTemplateEntity
+  extends BaseEntity
+  implements EmailTemplateModel
+{
   @Column()
   type: string;
 
