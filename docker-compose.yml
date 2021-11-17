@@ -34,10 +34,10 @@ services:
       - "${BLOG_NOTIFICATIONS_PORT}:${BLOG_NOTIFICATIONS_PORT}"
     container_name: blog-notifications
     networks:
-      - kong-net
+      - blog-net
     volumes:
-      - .:/home/node/app
+      - .:/home/node/app/blog-notifications
 
 networks:
-  kong-net:
+  blog-net:
     external: true

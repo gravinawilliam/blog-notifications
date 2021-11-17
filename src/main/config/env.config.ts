@@ -13,6 +13,7 @@ export const envConfig = {
   },
   sentry: {
     dsn: process.env.SENTRY_DSN,
+    environment: process.env.NODE_ENV === 'PROD' ? 'production' : 'development',
   },
   aws: {
     region: process.env.AWS_REGION,

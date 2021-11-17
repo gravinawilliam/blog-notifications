@@ -11,6 +11,7 @@ export type IEnvConfig = {
   };
   sentry: {
     dsn: string;
+    environment: string;
   };
   aws: {
     region: string;
