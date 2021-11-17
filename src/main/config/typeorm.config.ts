@@ -5,15 +5,19 @@ import { envConfig } from './env.config';
 
 const {
   dataBase: { dbDefault, dbSecondary },
+  application: { nodeEnv },
 } = envConfig;
+const dir =
+  // eslint-disable-next-line no-nested-ternary
+  nodeEnv === 'PROD' ? 'dist' : 'dist/src';
 
 const paths = {
   entities: [
-    `./dist/src/infra/database/typeorm/entities/**/*.js`,
-    `./dist/src/infra/database/typeorm/entities/*.js`,
+    `./${dir}/infra/database/typeorm/entities/**/*.js`,
+    `./${dir}/infra/database/typeorm/entities/*.js`,
   ],
-  migrations: [`./dist/src/infra/database/typeorm/migrations/*.js`],
-  migrationsDir: `./src/infra/database/typeorm/migrations/`,
+  migrations: [`./${dir}/infra/database/typeorm/migrations/*.js`],
+  migrationsDir: `./${dir}/infra/database/typeorm/migrations/`,
 };
 
 const typeormConfigDefault: ConnectionOptions = {
