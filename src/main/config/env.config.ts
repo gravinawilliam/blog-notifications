@@ -1,4 +1,5 @@
 import { IEnvConfig } from '@domain/config/env.config';
+import 'dotenv/config';
 
 export const envConfig = {
   // url: {

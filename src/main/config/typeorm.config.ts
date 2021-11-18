@@ -4,12 +4,11 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { envConfig } from './env.config';
 
 const {
-  dataBase: { dbDefault, dbSecondary },
   application: { nodeEnv },
+  dataBase: { dbDefault, dbSecondary },
 } = envConfig;
-const dir =
-  // eslint-disable-next-line no-nested-ternary
-  nodeEnv === 'PROD' ? 'dist' : 'dist/src';
+
+const dir = nodeEnv === 'PROD' ? 'dist' : 'dist/src';
 
 const paths = {
   entities: [
@@ -44,7 +43,7 @@ export const typeormConfigSecondary: ConnectionOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   authSource: 'admin',
-  entities: [`./dist/src/infra/database/typeorm/schemas/*.js`],
+  entities: [`./${dir}/infra/database/typeorm/schemas/*.js`],
   namingStrategy: new SnakeNamingStrategy(),
 };
 

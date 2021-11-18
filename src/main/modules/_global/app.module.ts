@@ -13,12 +13,12 @@ import { EmailsModule } from '../emails/emails.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
     SentryModule.forRoot({
       dsn: envConfig.sentry.dsn,
       logLevel: LogLevel.Verbose,
       environment: envConfig.sentry.environment,
     }),
+    ConfigModule.forRoot(),
     TypeOrmModule.forRoot(typeormConfigDefault),
     TypeOrmModule.forRoot(typeormConfigSecondary),
     EmailsModule,
