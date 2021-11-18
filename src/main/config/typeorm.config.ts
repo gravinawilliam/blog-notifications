@@ -16,7 +16,7 @@ const paths = {
     `./${dir}/infra/database/typeorm/entities/*.js`,
   ],
   migrations: [`./${dir}/infra/database/typeorm/migrations/*.js`],
-  migrationsDir: `./${dir}/infra/database/typeorm/migrations/`,
+  migrationsDir: `./src/infra/database/typeorm/migrations/`,
 };
 
 const typeormConfigDefault: ConnectionOptions = {
